@@ -1,0 +1,34 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "HTML - CSS - JS",
+      "datetime": "Apr 18, 2022 7:46:00 PM",
+      "body": "HTML es un lenguaje de marcado. Esto significa que nos permite definir la estructura y contenido de nuestra página web usando etiquetas. Toda parte de una página web se traduce en etiquetas HTML.",
+      "img": "https://unipython.com/wp-content/uploads/2018/03/aprenderhtml-y-css-min-641x320.jpg"
+    },
+    {
+      "id": 2,
+      "title": "JavaScript",
+      "datetime": "Apr 18, 2022 8:12:44 PM",
+      "body": "JavaScript es un lenguaje de programación interpretado, dialecto del estándar ECMAScript. Se define como orientado a objetos, basado en prototipos, imperativo, débilmente tipado y dinámico.",
+      "img": "https://soyhorizonte.com/wp-content/uploads/2020/10/Javascript-by-SoyHorizonte.jpg"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "title": "Axel",
+      "datetime": "Apr 18, 2022 7:46:00 PM",
+      "body": "Frontend React Developer",
+      "img": "https://www.pavilionweb.com/wp-content/uploads/2017/03/man-300x300.png"
+    },
+    {
+      "id": 2,
+      "title": "Aaron",
+      "datetime": "Apr 18, 2022 7:46:00 PM",
+      "body": "Backend Go Developer",
+      "img": "https://serviciosfg.com/images/testimonial-5.png"
+    }
+  ]
+}

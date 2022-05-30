@@ -1,24 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import useAxios from "./hooks/useAxios";
+
+let postUrl = "http://localhost:3500/posts";
+let usersUrl = "http://localhost:3500/users";
 
 function App() {
+  const { data, errMsg, isLoading } = useAxios(postUrl);
+  const {
+    data: dataUsers,
+    errMsg: errMsgUsers,
+    isLoading: isLoadingUsers,
+  } = useAxios(usersUrl);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <section style={{ display: "flex", justifyContent: "space-around" }}>
+      <article>
+        {errMsg && <p>Error - {errMsg}</p>}
+        {!errMsg && isLoading && <p>Cargando..</p>}
+        {!errMsg && !isLoading && data.length > 0 && (
+          <ul>
+            {data.map((post) => (
+              <li key={post.id}>{post.title}</li>
+            ))}
+          </ul>
+        )}
+      </article>
+      <article>
+        {errMsgUsers && <p>Error - {errMsgUsers}</p>}
+        {!errMsgUsers && isLoadingUsers && <p>Cargando..</p>}
+        {!errMsgUsers && !isLoadingUsers && dataUsers.length > 0 && (
+          <ul>
+            {dataUsers.map((user) => (
+              <li key={user.id}>
+                <h3>{user.title}</h3>
+                <img src={user.img} alt={user.title} />
+              </li>
+            ))}
+          </ul>
+        )}
+      </article>
+    </section>
   );
 }
 
