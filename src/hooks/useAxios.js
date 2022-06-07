@@ -23,6 +23,13 @@ const useAxios = (dataUrl) => {
     getItems(dataUrl);
   }, [dataUrl]);
 
+  useEffect(() => {
+    setTimeout(() => {
+      console.log(data)
+    }, 1000);
+  }, [])
+  
+
   return { data, errMsg, isLoading };
 };
 

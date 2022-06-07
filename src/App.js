@@ -1,15 +1,16 @@
 import useAxios from "./hooks/useAxios";
 
-let postUrl = "http://localhost:3500/posts";
-let usersUrl = "http://localhost:3500/users";
+// let postUrl = "http://localhost:3500/posts";
+let postUrl = "https://mola-items-api.herokuapp.com/items";
+// let usersUrl = "http://localhost:3500/users";
 
 function App() {
   const { data, errMsg, isLoading } = useAxios(postUrl);
-  const {
-    data: dataUsers,
-    errMsg: errMsgUsers,
-    isLoading: isLoadingUsers,
-  } = useAxios(usersUrl);
+  // const {
+  //   data: dataUsers,
+  //   errMsg: errMsgUsers,
+  //   isLoading: isLoadingUsers,
+  // } = useAxios(usersUrl);
 
   return (
     <section style={{ display: "flex", justifyContent: "space-around" }}>
@@ -24,7 +25,7 @@ function App() {
           </ul>
         )}
       </article>
-      <article>
+      {/* <article>
         {errMsgUsers && <p>Error - {errMsgUsers}</p>}
         {!errMsgUsers && isLoadingUsers && <p>Cargando..</p>}
         {!errMsgUsers && !isLoadingUsers && dataUsers.length > 0 && (
@@ -37,7 +38,7 @@ function App() {
             ))}
           </ul>
         )}
-      </article>
+      </article> */}
     </section>
   );
 }
